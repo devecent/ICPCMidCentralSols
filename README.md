@@ -1,3 +1,3 @@
 # ICPCMidCentralSols
 
-literally just my icpc midcentral solutions
+Literally just my ICPC solutions. Use as reference! Please don't copy it.
