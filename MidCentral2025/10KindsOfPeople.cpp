@@ -74,7 +74,6 @@ void solve() {
 }
 
 int main() {
-    // REMEMBER TO DELETE UNDER
     int t = 1;
     cin >> t;
     while(t--) {
