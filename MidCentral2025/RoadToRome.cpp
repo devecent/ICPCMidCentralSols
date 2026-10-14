@@ -3,6 +3,21 @@
 #define ii array<double,2>
 using namespace std;
 
+// the problem asks for the shortest perpendicular distance between two parallel lines that enclose all of the points
+// first, notice that we only need to consider points on the convex hull
+// this is because enclosing the convex hull guarantees that all points are enclosed
+// furthermore, there always exists an optimal pair of lines where one line lies along an edge of the convex hull
+// therefore, we can consider each edge and find the farthest vertex from that edge
+// the perpendicular distance between them gives us the width for that orientation
+
+// checking every vertex for every edge would take O(N^2)
+// instead, we can use rotating calipers to find the farthest vertex for each edge in O(N)
+// once we find the antipodal points using rotating calipers, we calculate the perpendicular distance using vector projection
+// the minimum distance over all edges is our answer
+
+// we construct the convex hull using the monotone chain algorithm in O(NlogN)
+// rotating calipers takes O(N), so the overall time complexity is O(NlogN)
+
 vector<ii> getHull(vector<ii>& points) {
     sort(points.begin(),points.end());
     points.erase(unique(points.begin(),points.end()),points.end());
