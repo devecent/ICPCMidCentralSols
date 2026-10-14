@@ -3,6 +3,11 @@
 #define ii array<ll,2>
 using namespace std;
 
+// a bruteforce is just slightly too slow with 7500*7500 operations
+// the idea is to precompute possible values for both A and B
+// then we can can loop through the precomputed possible values of A
+// and binary search in B to check if that value exists
+// nlog(n)
 
 void solve() {
     string a, b;
