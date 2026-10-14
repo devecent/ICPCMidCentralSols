@@ -3,6 +3,15 @@
 #define ii array<ll,2>
 using namespace std;
 
+// this problem is tricky with its constraints
+// the time constraints just barely allow for solutions without sieve of eratosthenes to pass
+// but binary exponetiation is necessary to pass time constraints
+// theres approximately 80,000 primes up to 10^6 and with an E of 10^6, is about 8 * 10^9 operations which is too many
+// in this solution, i used a sieve of eratosthenes to precompute the primes, but checking primes in O(sqrt(N))
+// is allowed in this problem by checking if an integer is a divisor of n up to the sqrt(N)
+// the solution below has time complexity of O(Nlog(log(N) + P*log(E)) where P is the number of primes up to N
+
+
 vector<bool> prime(1e6+10,true);
 vector<int> primes;
 
