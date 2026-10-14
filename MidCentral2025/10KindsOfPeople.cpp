@@ -7,7 +7,7 @@ using namespace std;
 // the idea is to precompute possible values for both A and B
 // then we can can loop through the precomputed possible values of A
 // and binary search in B to check if that value exists
-// nlog(n)
+// O(nlog(n))
 
 void solve() {
     string a, b;
